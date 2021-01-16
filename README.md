@@ -32,6 +32,13 @@ Yay to automation!
 
 # Usage
 You'll first need to install the packages listed in requirements.txt -- namely PyWin32 and XlsxWriter.
+We’ll be using a few key Python libraries here, namely os, sqlite3 and pywin32.
+
+- Before parsing our emails, we’ll first want to set up a SQL database with Python. We’ll do this by establishing a connection to the SQLite database with a connection object that we’ll call db.
+- You’ll want to move the emails that you want to parse from Outlook to a folder. The simplest method to do this is by dragging and dropping.
+- Next, you’ll want to create an object that will allow us to control Outlook from Python. This is enabled through the pywin32 library that helps to connect Python to Outlook via the Microsoft Outlook Messaging API (MAPI).
+- Parsing Email HTML with Python. Each bullet point is extracted as a string, and each string is stored in a list.
+- The final step in this process is to upload each piece of data to our SQL database.
 
 To make this portable (e.g. for someone that might not necessarily use an IDE) I used pyinstaller to create an executable file.
 ``` python
